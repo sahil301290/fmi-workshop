@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243B53">
+  <meta name="description" content="The inaugural Future Medicines Institute Workshop: Rapid Prototyping in Medical AI — From Multi-Sensor Data to Clinical Impact. 25 May 2027, Ulster University Belfast.">
+  <meta name="author" content="FMI Workshop Organising Committee">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FMI Workshop 2027 | Rapid Prototyping in Medical AI">
+  <meta property="og:description" content="From Multi-Sensor Data to Clinical Impact. An in-person workshop at Ulster University Belfast, Tuesday 25 May 2027.">
+  <meta property="og:locale" content="en_GB">
+  <title>FMI Workshop 2027 — Rapid Prototyping in Medical AI</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+/* FMI Workshop 2027 | navy & steel-blue academic palette */
+:root {
+  --ink: #1F2937;
+  --ink-soft: #394B5C;
+  --muted: #52677A;
+  --deep: #243B53;
+  --deep-2: #304D68;
+  --accent: #527DA3;
+  --accent-hover: #6494BC;
+  --accent-dark: #345E80;
+  --paper: #FFFFFF;
+  --warm: #F8FAFC;
+  --tint: #EAF1F7;
+  --line: #D8E3ED;
+  --shadow: 0 12px 34px rgba(28, 52, 77, .060);
+  --radius: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 94px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.72 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+button { font: inherit; }
+img, svg { max-width: 100%; }
+::selection { background: #D7E3EE; color: var(--ink); }
+.container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+.eyebrow {
+  font: 800 11px/1.5 'Manrope', sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+.eyebrow.light { color: #B9D2E7; }
+.section { padding: 86px 0; }
+.section-head { max-width: 730px; margin-bottom: 36px; }
+.section-head h2, .intro-copy h2, .venue-copy h2 {
+  font: 800 clamp(31px, 3.8vw, 45px)/1.17 'Manrope', sans-serif;
+  letter-spacing: -.042em;
+  margin: 11px 0 15px;
+}
+.section-head p, .intro-copy > p { color: var(--ink-soft); margin: 0; font-size: 16px; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 999px;
+  padding: 8px 13px;
+  font: 750 11px/1.3 'Manrope', sans-serif;
+}
+.pill i { height: 7px; width: 7px; background: currentColor; border-radius: 50%; display: block; }
+.btn {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 19px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: 800 13px/1.2 'Manrope', sans-serif;
+  transition: background .2s, color .2s, border .2s, transform .2s;
+  cursor: pointer;
+  text-align: center;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn svg { width: 17px; height: 17px; }
+.btn-primary, .btn-primary:visited { background: var(--accent); color: #172E45; }
+.btn-primary:hover { background: var(--accent-hover); color: #172E45; }
+.btn-outline, .btn-outline:visited { border-color: #7097BF; background: transparent; color: #FFFFFF; }
+.btn-outline:hover { border-color: #FFFFFF; background: #ffffff1b; }
+.btn-dark, .btn-dark:visited { background: var(--deep); color: #FFFFFF; }
+.btn-dark:hover { background: #283C50; }
+.btn-soft { border-color: var(--line); background: #FFFFFF; color: var(--ink); }
+.btn-soft:hover { border-color: var(--accent); }
+.btn[aria-disabled="true"] { cursor: not-allowed; opacity: .83; transform: none; }
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 24px;
+  color: var(--accent-dark);
+  font: 800 13px 'Manrope', sans-serif;
+}
+.link-arrow:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Branding and navigation */
+.topstrip {
+  background: #192E42;
+  color: #DBE4ED;
+  text-align: center;
+  padding: 8px 12px;
+  font: 650 10px/1.6 'Manrope', sans-serif;
+  letter-spacing: .095em;
+}
+.topstrip b { color: #8CACCB; }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(36, 59, 83, .98);
+  border-bottom: 1px solid #ffffff26;
+  backdrop-filter: blur(12px);
+}
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 11px; color: #FFFFFF; flex-shrink: 0; }
+.brand-mark {
+  display: grid; place-items: center; width: 43px; height: 43px;
+  border-radius: 9px; background: var(--accent); color: var(--deep);
+  font: 800 21px/1 'Manrope', sans-serif; letter-spacing: -.09em;
+}
+.brand-word { display: flex; flex-direction: column; line-height: 1.2; font-family: 'Manrope', sans-serif; }
+.brand-word strong { font-size: 14px; letter-spacing: -.035em; }
+.brand-word span { margin-top: 5px; color: #B6CBDF; font-size: 9px; text-transform: uppercase; letter-spacing: .13em; }
+.nav-links { display: flex; align-items: center; gap: 25px; }
+.nav-links a, .nav-links a:visited {
+  color: #E1E8F0;
+  font: 750 12px/1.25 'Manrope', sans-serif;
+  transition: color .2s, background .2s;
+}
+.nav-links a:hover, .nav-links a.active { color: #9EB9D3; }
+/* Explicit selectors prevent the active nav rule from washing out Registration. */
+.site-header .nav-links a.nav-register,
+.site-header .nav-links a.nav-register:visited,
+.site-header .nav-links a.nav-register.active {
+  display: inline-block;
+  padding: 12px 17px;
+  border-radius: 8px;
+  background: #527DA3;
+  color: #172E45;
+  font-weight: 800;
+  opacity: 1;
+}
+.site-header .nav-links a.nav-register:hover,
+.site-header .nav-links a.nav-register.active:hover {
+  background: #FFFFFF;
+  color: #172E45;
+}
+.menu-btn {
+  display: none; width: 43px; height: 43px;
+  align-items: center; justify-content: center;
+  border: 1px solid #ffffff55; border-radius: 8px;
+  background: transparent; color: #FFFFFF; cursor: pointer;
+}
+.menu-btn svg { width: 23px; height: 23px; }
+
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+  background:
+    radial-gradient(ellipse at 84% 23%, rgba(82, 125, 163, .26), transparent 41%),
+    radial-gradient(ellipse at 2% 93%, rgba(59, 95, 129, .21), transparent 48%),
+    var(--deep);
+}
+.hero::before {
+  content: ''; pointer-events: none;
+  position: absolute; inset: 0; opacity: .12;
+  background-image: radial-gradient(#AEC5DC .8px, transparent .8px);
+  background-size: 23px 23px;
+  mask-image: linear-gradient(90deg, transparent, #000);
+}
+.hero::after {
+  content: ''; position: absolute; pointer-events: none;
+  width: 580px; height: 580px; border-radius: 50%;
+  border: 1px solid #A3BDD71c; right: -285px; top: -315px;
+  box-shadow: 0 0 0 80px #A3BDD707, 0 0 0 165px #A3BDD706;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1.04fr .96fr;
+  align-items: center; gap: 42px;
+  position: relative; z-index: 1;
+  padding: 83px 0 63px;
+}
+.hero .pill { border: 1px solid #9DB8D457; background: #5483B214; color: #9FBAD5; }
+.hero h1 {
+  font: 800 clamp(46px, 5.65vw, 72px)/1.07 'Manrope', sans-serif;
+  letter-spacing: -.061em; margin: 20px 0 18px;
+  max-width: 650px;
+}
+.hero h1 span { color: #9CB7D2; }
+.hero .tagline {
+  color: #DDE6EE;
+  font: 650 clamp(19px, 2.2vw, 25px)/1.46 'Manrope', sans-serif;
+  letter-spacing: -.03em;
+  margin: 0 0 18px; max-width: 550px;
+}
+.hero .lede { color: #BFD1E3; font-size: 15px; line-height: 1.83; max-width: 530px; margin: 0; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+.hero-foot {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  position: relative; z-index: 2;
+  border-top: 1px solid #ffffff3a;
+  padding: 24px 0 25px;
+}
+.hero-fact { display: flex; gap: 11px; align-items: flex-start; }
+.hero-fact svg { flex: none; width: 19px; height: 19px; color: #9FB9D4; margin-top: 3px; }
+.hero-fact strong { display: block; font: 800 13px/1.5 'Manrope', sans-serif; color: #FFFFFF; }
+.hero-fact span { display: block; margin-top: 3px; font-size: 12px; color: #B7CBDF; }
+.hero-graphic { position: relative; min-width: 0; isolation: isolate; }
+.hero-graphic::before {
+  content: ''; position: absolute; inset: 15% 7%; z-index: -1;
+  background: #5483B21f; border-radius: 50%; filter: blur(60px);
+}
+.hero-graphic svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 22px 45px #00000050); }
+.floating-label { position: absolute; left: 2%; bottom: 1%; color: #CFDCEA; font: 700 10px 'Manrope', sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+
+/* Vision */
+.intro-layout { display: grid; grid-template-columns: .96fr 1.04fr; align-items: center; gap: 66px; }
+.intro-copy h2 { max-width: 530px; }
+.intro-copy p + p { margin-top: 17px; }
+.value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.value-card {
+  min-height: 187px; padding: 24px 23px;
+  border: 1px solid var(--line); border-radius: 15px;
+  background: #FFFFFF; box-shadow: var(--shadow);
+}
+.value-card:first-child {
+  grid-column: span 2; min-height: 148px;
+  background: #F7F9FB; border-color: #C0D2E3;
+}
+.value-icon {
+  display: grid; place-items: center; width: 38px; height: 38px;
+  margin-bottom: 17px; border-radius: 9px;
+  background: #EBF0F5; color: #3F5E7D;
+}
+.value-card:first-child .value-icon { background: #D6E1ED; }
+.value-icon svg { width: 20px; height: 20px; }
+.value-card h3 { font: 800 16px/1.4 'Manrope', sans-serif; margin: 0 0 8px; letter-spacing: -.025em; }
+.value-card p, .value-card:first-child p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; margin: 0; }
+
+/* Themes */
+.themes { background: var(--warm); }
+.themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+.theme {
+  min-height: 208px; padding: 27px 25px;
+  background: #FFFFFF; border: 1px solid var(--line); border-radius: 14px;
+  transition: box-shadow .2s, transform .2s;
+}
+.theme:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.theme-num { display: block; margin-bottom: 19px; color: var(--accent-dark); font: 800 12px 'Manrope', sans-serif; }
+.theme h3 { margin: 0 0 10px; font: 800 17px/1.4 'Manrope', sans-serif; letter-spacing: -.028em; }
+.theme p { margin: 0; color: var(--ink-soft); font-size: 13.5px; line-height: 1.75; }
+
+/* Separate journal opportunity */
+.special-issue { background: #FFFFFF; }
+.special-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 21px; align-items: stretch; }
+.special-card {
+  position: relative; overflow: hidden;
+  padding: 37px 39px; border-radius: 16px;
+  background: #1D2B39; color: #F4F7F9;
+}
+.special-card::before {
+  content: ''; position: absolute; right: -95px; top: -120px;
+  width: 340px; height: 340px; border-radius: 50%;
+  border: 1px solid #9CB7D238;
+  box-shadow: 0 0 0 53px #B3C8DD09, 0 0 0 108px #B3C8DD07;
+  pointer-events: none;
+}
+.special-card .eyebrow { color: #9EB9D4; }
+.special-card h3 {
+  position: relative; max-width: 600px;
+  margin: 15px 0 17px;
+  font: 800 clamp(25px, 3vw, 34px)/1.19 'Manrope', sans-serif;
+  letter-spacing: -.04em;
+}
+.special-card > p { position: relative; max-width: 600px; margin: 0 0 19px; color: #D1DEEB; font-size: 14px; line-height: 1.8; }
+.special-card .btn { position: relative; }
+.special-roles {
+  display: flex; flex-wrap: wrap; gap: 14px 25px;
+  position: relative;
+  margin: 22px 0 27px; padding-top: 20px;
+  border-top: 1px solid #ffffff38;
+}
+.special-roles dt { margin: 0 0 5px; color: #A5BED8; font: 800 10px 'Manrope', sans-serif; text-transform: uppercase; letter-spacing: .12em; }
+.special-roles dd { margin: 0; color: #FFFFFF; font: 750 13px/1.4 'Manrope', sans-serif; }
+.special-facts {
+  display: flex; flex-direction: column; gap: 19px;
+  padding: 32px 29px;
+  border: 1px solid #D7E2ED; border-radius: 16px;
+  background: #F7F9FB;
+}
+.special-facts .due { margin: 9px 0 0; color: #36516C; font: 800 26px/1.2 'Manrope', sans-serif; letter-spacing: -.035em; }
+.special-facts p { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.7; }
+.special-facts h4 { margin: 0 0 9px; font: 800 13px 'Manrope', sans-serif; }
+.special-facts .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.special-facts .tags span {
+  padding: 6px 9px; border: 1px solid #D0DDEA; border-radius: 6px;
+  background: #FFFFFF; color: #3A5673;
+  font: 750 11px 'Manrope', sans-serif;
+}
+.special-facts .disclosure { border-top: 1px solid #C9D8E7; padding-top: 14px; font-size: 12px; }
+
+/* Format banner and programme */
+.format-strip { background: #527DA3; color: #1B2936; padding: 32px 0; }
+.format-row { display: grid; grid-template-columns: 1.18fr repeat(4,1fr); align-items: center; gap: 19px; }
+.format-row .intro { font: 800 18px/1.35 'Manrope', sans-serif; letter-spacing: -.035em; }
+.format-item { border-left: 1px solid #283C5070; padding-left: 17px; }
+.format-item small { display: block; margin-bottom: 7px; color: #2C4156; font: 800 10px/1.5 'Manrope', sans-serif; letter-spacing: .13em; }
+.format-item strong { display: block; font: 800 13px/1.5 'Manrope', sans-serif; }
+.schedule-layout { display: grid; grid-template-columns: 1.58fr .68fr; align-items: start; gap: 44px; }
+.schedule-list { border-top: 1px solid #CBDAE8; }
+.schedule-row { display: grid; grid-template-columns: 115px 1fr; align-items: start; gap: 22px; padding: 21px 7px 21px 0; border-bottom: 1px solid #D7E2ED; }
+.schedule-time { color: #3B5875; font: 800 14px/1.45 'Manrope', sans-serif; }
+.schedule-activity strong { display: block; font: 800 15px/1.45 'Manrope', sans-serif; }
+.schedule-activity p { margin: 5px 0 0; color: var(--muted); font-size: 12.5px; }
+.schedule-row.accent { padding-left: 14px; margin-left: -14px; background: #EFF3F7; border-bottom-color: #CDDBE9; border-radius: 8px; }
+.schedule-row.accent + .schedule-row { border-top: 0; }
+.program-note { position: sticky; top: 110px; padding: 27px 24px; background: #F6F8FA; border: 1px solid #D4E0EC; border-radius: 14px; }
+.program-note h3 { margin: 11px 0; font: 800 19px/1.4 'Manrope', sans-serif; letter-spacing: -.03em; }
+.program-note p { margin: 0 0 15px; color: var(--ink-soft); font-size: 13px; }
+.program-note ul { margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 12.5px; line-height: 1.9; }
+
+/* Speakers */
+.speakers { background: var(--warm); }
+.speakers-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.speaker-slot { display: flex; flex-direction: column; min-height: 210px; padding: 26px; background: #FFFFFF; border: 1px solid var(--line); border-radius: 14px; }
+.speaker-slot .avatar-placeholder { display: grid; place-items: center; width: 54px; height: 54px; margin-bottom: 22px; border-radius: 50%; background: #E5ECF2; color: #446586; }
+.speaker-slot svg { width: 24px; height: 24px; }
+.speaker-slot .label { margin: 0 0 7px; color: var(--accent-dark); font: 800 10px 'Manrope', sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.speaker-slot h3 { margin: 0; font: 800 18px/1.4 'Manrope', sans-serif; letter-spacing: -.025em; }
+.speaker-slot p:last-child { margin: 8px 0 0; color: var(--muted); font-size: 12.5px; }
+.speaker-callout { display: flex; justify-content: space-between; align-items: center; gap: 23px; padding: 23px 26px; margin-top: 18px; background: #1F2937; border-radius: 12px; color: #E2E9F0; }
+.speaker-callout p { margin: 0; font-size: 13px; line-height: 1.7; }
+.speaker-callout strong { color: #FFFFFF; font-family: 'Manrope', sans-serif; }
+.speaker-callout a { flex: none; color: #B9D2E7; font: 800 12px 'Manrope', sans-serif; border-bottom: 1px solid #B9D2E7; }
+
+/* Speaker expression-of-interest form */
+.proposals { background: #FFFFFF; }
+.proposal-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 48px; margin-bottom: 28px; }
+.proposal-heading h2 { margin: 11px 0 0; font: 800 clamp(30px,4vw,45px)/1.15 'Manrope',sans-serif; letter-spacing: -.042em; }
+.proposal-sub { color: #45688A; }
+.proposal-heading > p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+.proposal-tracks { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 21px; }
+.proposal-tracks article { display: flex; flex-direction: column; min-height: 210px; padding: 23px; background: #FFFFFF; border: 1px solid var(--line); border-radius: 13px; }
+.track-label { color: var(--accent-dark); font: 800 10px 'Manrope',sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.proposal-tracks h3 { margin: 16px 0 7px; font: 800 17px/1.35 'Manrope',sans-serif; letter-spacing: -.025em; }
+.proposal-tracks p { margin: 0 0 15px; color: var(--ink-soft); font-size: 12.5px; line-height: 1.7; }
+.proposal-tracks a { margin-top: auto; color: var(--accent-dark); font: 800 12px 'Manrope',sans-serif; text-decoration: underline; text-underline-offset: 3px; }
+.proposal-form-panel { display: grid; grid-template-columns: .82fr 1.18fr; gap: 34px; padding: 33px; background: #F6F8FA; border: 1px solid #D7E2ED; border-radius: 15px; scroll-margin-top: 100px; }
+.proposal-form-intro h3 { margin: 12px 0; font: 800 27px/1.25 'Manrope',sans-serif; letter-spacing: -.035em; }
+.proposal-form-intro > p { color: var(--ink-soft); font-size: 13px; line-height: 1.85; }
+.proposal-policy { margin: 21px 0; padding: 15px 17px; border-left: 3px solid #527DA3; border-radius: 0 8px 8px 0; background: #FFFFFF; color: var(--ink-soft); font-size: 12.5px; line-height: 1.7; }
+.proposal-hint { margin-top: 19px; }
+.proposal-direct-email { color: var(--accent-dark); font: 800 12px 'Manrope',sans-serif; text-decoration: underline; text-underline-offset: 3px; }
+#speaker-interest-form { display: grid; gap: 14px; padding: 25px; background: #FFFFFF; border: 1px solid #D8E3ED; border-radius: 13px; box-shadow: 0 7px 20px #1B29360a; }
+.form-two { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field label { color: var(--ink); font: 800 12px/1.5 'Manrope',sans-serif; }
+.form-field label .optional { color: var(--muted); font: 500 11px 'DM Sans',sans-serif; }
+.form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 44px; padding: 11px 12px; border: 1px solid #A5BED8; border-radius: 7px; background: #FFFFFF; color: var(--ink); font: 500 13px/1.6 'DM Sans',sans-serif; }
+.form-field textarea { min-height: 78px; resize: vertical; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: #3E5D7C; }
+.form-field input::placeholder, .form-field textarea::placeholder { color: #5881AB; }
+.proposal-submit { width: 100%; margin-top: 3px; }
+.form-status { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.65; }
+
+/* Committee */
+#organisers { background: var(--warm); }
+.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.team-card { min-height: 227px; padding: 24px; background: #FFFFFF; border: 1px solid var(--line); border-radius: 13px; }
+.team-card.lead { background: #EFF3F7; border-color: #BFD1E3; }
+.team-top { display: flex; align-items: center; gap: 12px; margin-bottom: 19px; }
+.initial { display: grid; place-items: center; flex: none; width: 47px; height: 47px; border-radius: 10px; background: #DFE7EF; color: #3B5874; font: 800 16px 'Manrope',sans-serif; }
+.team-card.lead .initial { background: #527DA3; color: #172E45; }
+.team-role { color: #456789; font: 800 10px/1.35 'Manrope',sans-serif; letter-spacing: .095em; text-transform: uppercase; }
+.team-card h3 { margin: 0 0 6px; font: 800 18px/1.4 'Manrope',sans-serif; letter-spacing: -.035em; }
+.team-card p { margin: 0 0 12px; color: var(--ink-soft); font-size: 12.5px; line-height: 1.75; }
+.team-card a { color: var(--accent-dark); font: 800 12px 'Manrope',sans-serif; border-bottom: 1px solid #547DA7; }
+.team-links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.support-header { margin: 38px 0 16px; font: 800 19px 'Manrope',sans-serif; }
+.support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.support-card { padding: 22px; border: 1px dashed #A7C0D9; border-radius: 11px; background: #FFFFFF; }
+.support-card span { display: inline-block; margin-bottom: 7px; color: #426383; font: 800 11px 'Manrope',sans-serif; }
+.support-card h4 { margin: 0 0 6px; font: 800 15px 'Manrope',sans-serif; }
+.support-card p { margin: 0; color: var(--ink-soft); font-size: 12.5px; }
+
+/* Registration */
+.tickets { background: #F1F5F8; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.price-card { padding: 28px 27px; background: #FFFFFF; border: 1px solid #CDDBE9; border-radius: 13px; }
+.price-card.highlight { position: relative; border: 2px solid #527DA3; }
+.price-card .price-type { font: 800 13px 'Manrope',sans-serif; }
+.price { margin: 24px 0 9px; font: 800 51px/1.15 'Manrope',sans-serif; letter-spacing: -.062em; }
+.price span { color: var(--muted); font: 600 15px 'DM Sans',sans-serif; letter-spacing: 0; }
+.price-card p { min-height: 52px; margin: 0; color: var(--ink-soft); font-size: 13px; }
+.price-card .rule { height: 1px; margin: 21px 0; background: #DBE4ED; }
+.price-card small { color: var(--ink-soft); font-size: 12px; }
+.pricing-bottom { display: flex; justify-content: space-between; align-items: center; gap: 22px; margin-top: 24px; }
+.pricing-bottom p { max-width: 730px; margin: 0; color: var(--ink-soft); font-size: 13px; }
+.pricing-bottom .btn { flex: none; }
+
+/* Venue */
+.venue { padding: 86px 0; background: #FFFFFF; }
+.venue-layout { display: grid; grid-template-columns: 1fr .9fr; gap: 35px; background: #1F2937; color: #FFFFFF; border-radius: 16px; overflow: hidden; }
+.venue-copy { padding: 54px 16px 54px 54px; }
+.venue-copy .eyebrow { color: #9FBAD5; }
+.venue-copy h2 { max-width: 540px; margin-bottom: 17px; }
+.venue-copy p { margin: 0 0 25px; color: #D0DDEB; font-size: 15px; }
+.venue-address { margin-bottom: 24px; padding-left: 17px; border-left: 3px solid #527DA3; font: 650 14px/1.8 'Manrope',sans-serif; font-style: normal; }
+.venue-art { position: relative; min-height: 380px; overflow: hidden; background: radial-gradient(circle at 27% 28%, #476A8D, transparent 47%), #30485F; }
+.venue-art::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(#ffffff10 1px,transparent 1px),linear-gradient(90deg,#ffffff10 1px,transparent 1px); background-size: 34px 34px; }
+.venue-art .orbit { position: absolute; left: 50%; top: 50%; border: 1px solid #BACEE166; border-radius: 50%; transform: translate(-50%,-50%); }
+.venue-art .orbit.one { width: 210px; height: 210px; }
+.venue-art .orbit.two { width: 360px; height: 360px; }
+.venue-art .orbit.three { width: 510px; height: 510px; }
+.venue-center { position: absolute; z-index: 2; left: 50%; top: 50%; transform: translate(-50%,-50%); display: flex; flex-direction: column; align-items: center; justify-content: center; width: 132px; height: 132px; border: 11px solid #BBCEE1; border-radius: 50%; background: #EAEFF4; color: #2A3F53; box-shadow: 0 0 55px #5483B261; }
+.venue-center strong { font: 800 21px 'Manrope',sans-serif; }
+.venue-center span { font: 800 10px 'Manrope',sans-serif; letter-spacing: .11em; }
+.map-pin { position: absolute; z-index: 3; border: 1px solid #B6CBDF; border-radius: 8px; padding: 10px 12px; background: #F8FAFB; box-shadow: 0 12px 29px #1B293650; color: #324B64; font: 800 11px 'Manrope',sans-serif; }
+.map-pin.one { top: 22%; left: 8%; }
+.map-pin.two { bottom: 21%; right: 6%; }
+.map-pin.three { top: 15%; right: 12%; }
+
+/* Partners, FAQs, footer */
+.partners { background: #FFFFFF; }
+.partners-grid { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 18px; }
+.partner { min-height: 195px; padding: 26px 23px; background: var(--warm); border: 1px solid var(--line); border-radius: 13px; }
+.partner .eyebrow { font-size: 10px; }
+.partner h3 { margin: 17px 0 7px; font: 800 18px/1.4 'Manrope',sans-serif; letter-spacing: -.03em; }
+.partner p { margin: 0; color: var(--ink-soft); font-size: 12.5px; }
+.partner a { color: var(--accent-dark); border-bottom: 1px solid #8BABCB; }
+.journal-row { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+.journal-mark { display: inline-flex; align-items: center; gap: 8px; padding: 9px 11px; background: #FFFFFF; border: 1px solid #C6D6E6 !important; border-radius: 7px; color: #334C65 !important; font: 800 13px 'Manrope',sans-serif; }
+.journal-mark .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.partner .journal-row { margin: 17px 0 11px; }
+.partner-invite { background: #F1F5F8; border-style: dashed; border-color: #B3C9DE; }
+.partner-invite h3 { margin-top: 15px; }
+.faq { padding: 77px 0; background: var(--warm); }
+.faq-grid { display: grid; grid-template-columns: .76fr 1.24fr; gap: 65px; }
+.faq-grid h2 { margin: 11px 0; font: 800 35px/1.2 'Manrope',sans-serif; letter-spacing: -.04em; }
+.faq-grid .sub { color: var(--ink-soft); font-size: 14px; }
+.faq-items details { padding: 17px 0; border-bottom: 1px solid #CFDCEA; }
+.faq-items summary { display: flex; justify-content: space-between; align-items: center; gap: 12px; list-style: none; cursor: pointer; font: 800 14px 'Manrope',sans-serif; }
+.faq-items summary::-webkit-details-marker { display: none; }
+.faq-items summary::after { content: '+'; color: var(--accent-dark); font-size: 22px; font-weight: 400; }
+.faq-items details[open] summary::after { content: '−'; }
+.faq-items details p { margin: 11px 24px 4px 0; color: var(--ink-soft); font-size: 13px; line-height: 1.75; }
+.faq-items details a { color: var(--accent-dark); text-decoration: underline; }
+footer { padding: 44px 0 23px; background: var(--deep); color: #C8D7E7; }
+.footer-top { display: flex; justify-content: space-between; gap: 30px; padding-bottom: 35px; }
+.footer-brand strong { display: block; color: #FFFFFF; font: 800 19px 'Manrope',sans-serif; }
+.footer-brand p { max-width: 460px; color: #B5CADF; font-size: 12px; line-height: 1.85; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 17px; font: 750 12px 'Manrope',sans-serif; }
+.footer-links a:hover { color: #B9D2E7; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid #ffffff2c; color: #ACC3DA; font-size: 11px; }
+.footer-bottom a { color: #A2BCD6; }
+.skip-link { position: absolute; top: -100px; left: 10px; z-index: 999; background: #FFFFFF; color: #172E45; padding: 8px; }
+.skip-link:focus { top: 10px; }
+
+@media (max-width: 1050px) {
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 11px; }
+  .hero-grid { gap: 10px; }
+  .intro-layout { gap: 35px; }
+  .format-row { grid-template-columns: repeat(4,1fr); }
+  .format-row .intro { grid-column: 1/-1; }
+  .venue-copy { padding-left: 38px; }
+}
+@media (max-width: 780px) {
+  .container { width: min(calc(100% - 34px), 600px); }
+  .section { padding: 67px 0; }
+  .topstrip { font-size: 10px; }
+  .menu-btn { display: flex; }
+  .nav-wrap { min-height: 69px; }
+  .nav-links {
+    position: absolute; display: none; flex-direction: column; align-items: stretch;
+    gap: 0; top: 100%; left: 0; right: 0;
+    padding: 10px 17px 18px; border-top: 1px solid #ffffff2e;
+    background: #243B53; box-shadow: 0 20px 30px #1B293649;
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { font-size: 13px; padding: 12px 10px; }
+  .site-header .nav-links a.nav-register { margin-top: 8px; text-align: center; }
+  .hero-grid { grid-template-columns: 1fr; gap: 12px; padding: 63px 0 40px; }
+  .hero h1 { font-size: clamp(43px, 9vw, 67px); }
+  .hero .tagline { font-size: 20px; }
+  .hero-graphic { width: min(100%, 475px); margin: 22px auto 0; }
+  .hero-foot { grid-template-columns: 1fr; gap: 14px; }
+  .intro-layout, .schedule-layout, .venue-layout, .faq-grid { grid-template-columns: 1fr; }
+  .value-grid, .support-grid { grid-template-columns: 1fr 1fr; }
+  .themes-grid, .team-grid, .speakers-row, .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .program-note { position: static; }
+  .venue-copy { padding: 39px 29px 17px; }
+  .venue-art { min-height: 340px; }
+  .partners-grid { grid-template-columns: 1fr 1fr; }
+  .partner-invite { grid-column: 1/-1; }
+  .pricing-bottom { align-items: flex-start; flex-direction: column; }
+  .footer-top { flex-direction: column; }
+  .faq-grid { gap: 19px; }
+  .format-row { gap: 17px; }
+  .proposal-heading, .proposal-form-panel { grid-template-columns: 1fr; gap: 20px; }
+  .proposal-tracks { grid-template-columns: 1fr 1fr; }
+  .special-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .section-head h2, .intro-copy h2, .venue-copy h2 { font-size: 31px; }
+  .hero h1 { font-size: 43px; }
+  .hero-graphic { margin-top: 13px; }
+  .value-grid, .themes-grid, .speakers-row, .team-grid, .support-grid, .pricing-grid, .partners-grid, .proposal-tracks, .form-two { grid-template-columns: 1fr; }
+  .value-card:first-child, .partner-invite { grid-column: span 1; }
+  .value-card { min-height: 0; }
+  .format-row { grid-template-columns: 1fr 1fr; }
+  .format-row .intro { grid-column: 1/-1; }
+  .format-item { padding-left: 12px; }
+  .schedule-row { grid-template-columns: 85px 1fr; gap: 12px; }
+  .schedule-time { font-size: 12px; }
+  .speaker-callout { flex-direction: column; align-items: flex-start; }
+  .footer-bottom { flex-direction: column; }
+  .venue-art { min-height: 278px; }
+  .venue-art .orbit.three { width: 390px; height: 390px; }
+  .map-pin { font-size: 9px; }
+  .hero-actions .btn { flex: 1; }
+  .brand-word strong { font-size: 12px; }
+  .proposal-form-panel { padding: 18px; }
+  #speaker-interest-form { padding: 18px; }
+  .proposal-tracks article { min-height: 0; }
+  .proposal-heading { gap: 14px; }
+  .special-card { padding: 29px 24px; }
+  .special-facts { padding: 24px; }
+  .special-card h3 { font-size: 26px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+
+/* FMI institutional context and grouped partnership identities.
+   Official logo assets are intentionally not copied without brand permissions. */
+.identity-section { background: var(--warm); }
+.identity-intro { display: grid; grid-template-columns: .83fr 1.17fr; gap: 55px; align-items: start; margin-bottom: 34px; }
+.identity-intro h2 { font: 800 clamp(29px,3.6vw,42px)/1.18 'Manrope', sans-serif; letter-spacing: -.04em; margin: 12px 0 0; }
+.identity-summary p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.82; }
+.identity-summary .link-arrow { margin-top: 15px; }
+.identity-panel { background: #FFFFFF; border: 1px solid var(--line); border-radius: 14px; padding: 29px 31px; box-shadow: 0 8px 32px rgba(28,52,77,.035); }
+.identity-group + .identity-group { border-top: 1px solid var(--line); margin-top: 27px; padding-top: 25px; }
+.identity-group-title { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; justify-content: space-between; margin-bottom: 15px; }
+.identity-group-title h3 { font: 800 17px/1.35 'Manrope',sans-serif; letter-spacing: -.02em; margin: 0; }
+.identity-group-title p { color: #4B7095; font-size: 12px; margin: 0; }
+.identity-primary-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.identity-tile { display: flex; align-items: center; gap: 13px; min-height: 89px; padding: 18px 17px; border-radius: 9px; background: #FBFCFD; border: 1px solid #D1DEEB; color: var(--ink); transition: border-color .15s,background .15s; }
+.identity-tile:hover { border-color: var(--accent); background: #F6F8FA; }
+.identity-tile strong { display: block; font: 800 14px/1.4 'Manrope', sans-serif; letter-spacing: -.02em; }
+.identity-tile small { display: block; font: 600 11px/1.4 'DM Sans', sans-serif; color: #4D7398; margin-top: 5px; }
+.identity-tile-feature { background: #EFF3F7; border-color: #CEDCEA; }
+.identity-monogram { display: grid; place-items: center; flex: none; width: 47px; height: 47px; background: #283C50; color: #FFFFFF; border-radius: 7px; font: 800 13px/1 'Manrope', sans-serif; letter-spacing: -.01em; }
+.identity-name-grid { display: flex; flex-wrap: wrap; gap: 9px; }
+.identity-name-grid span { display: inline-flex; align-items: center; padding: 9px 12px; border: 1px solid #D8E3ED; border-radius: 7px; color: #344E67; background: #FBFCFD; font: 700 12px/1.35 'Manrope',sans-serif; }
+.identity-source-link { display: inline-block; margin-top: 14px; color: var(--accent-dark); font: 750 12px 'Manrope',sans-serif; text-decoration: underline; text-underline-offset: 3px; }
+.identity-funding-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.identity-funder { background: #F9FBFC; min-height: 72px; }
+.identity-sponsor-note { display: flex; justify-content: space-between; gap: 9px 22px; flex-wrap: wrap; margin-top: 17px; font-size: 12px; color: var(--muted); }
+.identity-sponsor-note a { color: var(--accent-dark); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 780px) {
+  .identity-intro { grid-template-columns: 1fr; gap: 13px; }
+  .identity-primary-grid { grid-template-columns: 1fr 1fr; }
+  .identity-tile-feature { grid-column: 1/-1; }
+  .identity-panel { padding: 25px 21px; }
+}
+@media (max-width: 560px) {
+  .identity-primary-grid, .identity-funding-grid { grid-template-columns: 1fr; }
+  .identity-tile-feature { grid-column: auto; }
+  .identity-panel { padding: 22px 17px; }
+  .identity-group-title { display: block; }
+  .identity-group-title p { margin-top: 5px; }
+  .identity-intro h2 { font-size: 32px; }
+}
+  
+/* Colour calibration: clinical-research navy / steel-blue, WCAG-conscious CTAs. */
+:root {
+  --ink: #1F2937;
+  --ink-soft: #394B5C;
+  --muted: #52677A;
+  --deep: #243B53;
+  --deep-2: #304D68;
+  --accent: #527DA3;
+  --accent-hover: #6494BC;
+  --accent-dark: #315B7F;
+  --paper: #FFFFFF;
+  --warm: #F8FAFC;
+  --tint: #EAF1F7;
+  --line: #D8E3ED;
+  --shadow: 0 12px 34px rgba(28,52,77,.06);
+}
+body { background: #FFFFFF; }
+::selection { background: #C8E0F1; color: #172E45; }
+.topstrip { background: #1D3044; color: #E4EFF8; }
+.topstrip b { color: #C8E0F1; }
+.site-header { background: rgba(36,59,83,.98); }
+.brand-mark { background: #C8E0F1; color: #172E45; }
+.brand-word span { color: #CEDDEA; }
+.nav-links a, .nav-links a:visited { color: #E3ECF4; }
+.nav-links a:hover, .nav-links a.active { color: #C8E0F1; }
+.site-header .nav-links a.nav-register,
+.site-header .nav-links a.nav-register:visited,
+.site-header .nav-links a.nav-register.active {
+  background: #C8E0F1;
+  color: #172E45;
+  opacity: 1;
+}
+.site-header .nav-links a.nav-register:hover,
+.site-header .nav-links a.nav-register.active:hover {
+  background: #FFFFFF;
+  color: #172E45;
+}
+.btn-primary, .btn-primary:visited { background: #C8E0F1; color: #172E45; }
+.btn-primary:hover { background: #E4F1FA; color: #172E45; }
+.btn-dark, .btn-dark:visited { background: #243B53; color: #FFFFFF; }
+.btn-dark:hover { background: #365875; }
+.btn-soft:hover { border-color: #527DA3; }
+.hero { background: radial-gradient(ellipse at 84% 23%, rgba(82,125,163,.26), transparent 41%), radial-gradient(ellipse at 2% 93%, rgba(59,95,129,.21), transparent 48%), #243B53; }
+.hero .pill { border-color: #b9d2e75c; background: #b9d2e715; color: #D7E9F5; }
+.hero h1 span { color: #C8E0F1; }
+.hero .tagline { color: #EDF5FA; }
+.hero .lede, .hero-fact span { color: #D3E1EB; }
+.hero-fact svg { color: #C8E0F1; }
+.value-card:first-child { background: #F0F6FB; border-color: #D3E3F0; }
+.value-icon { background: #E1EEF7; color: #315B7F; }
+.value-card:first-child .value-icon { background: #D3E6F4; }
+.themes, #organisers, .identity-section, .faq { background: #F8FAFC; }
+.special-issue { background: #FFFFFF; }
+.special-card { background: #243B53; color: #FFFFFF; }
+.special-card .eyebrow, .special-roles dt { color: #BCD7E9; }
+.special-card > p { color: #E0EAF3; }
+.special-facts { background: #F1F6FA; border-color: #D8E5F0; }
+.special-facts .due { color: #315B7F; }
+.special-facts .tags span { border-color: #D8E5F0; color: #315B7F; }
+.format-strip { background: #527DA3; color: #FFFFFF; }
+.format-item { border-left-color: #C4D7E880; }
+.format-item small { color: #F0F7FB; }
+.schedule-row.accent { background: #EDF4F9; }
+.program-note { background: #EAF1F7; }
+.speakers { background: #F8FAFC; }
+.speaker-callout { background: #243B53; }
+.speaker-callout a { color: #C8E0F1; border-bottom-color: #C8E0F1; }
+.proposals { background: #FFFFFF; }
+.proposal-form-panel { background: #EAF1F7; border-color: #D3E3F0; }
+.proposal-policy { border-left-color: #527DA3; }
+.team-card.lead { background: #EDF4F9; border-color: #C9DEEE; }
+.team-card.lead .initial { background: #527DA3; color: #FFFFFF; }
+.tickets { background: #EAF1F7; }
+.price-card.highlight { border-color: #527DA3; }
+.venue-layout { background: #243B53; }
+.venue-address { border-left-color: #9BC2DF; }
+.venue-art { background: radial-gradient(circle at 27% 28%, #527DA3, transparent 47%), #304D68; }
+.venue-center { background: #E1EFF8; border-color: #B7D4E8; color: #243B53; }
+.map-pin { background: #F8FAFC; color: #243B53; }
+.identity-panel { box-shadow: 0 8px 32px rgba(28,52,77,.04); }
+.identity-tile { background: #FFFFFF; border-color: #D8E3ED; }
+.identity-tile:hover { border-color: #527DA3; background: #F4F8FC; }
+.identity-tile-feature { background: #EAF1F7; border-color: #C5D9E9; }
+.identity-monogram { background: #243B53; color: #FFFFFF; }
+.identity-name-grid span { background: #F8FAFC; border-color: #D8E3ED; color: #30485C; }
+.identity-funder { background: #F8FAFC; }
+footer { background: #1D3044; color: #E1ECF5; }
+.footer-brand p, .footer-bottom { color: #D4E2EC; }
+.footer-links a:hover, .footer-bottom a { color: #C8E0F1; }
+@media (max-width:780px) {
+  .nav-links { background: #243B53; box-shadow: 0 20px 30px rgba(20,35,54,.22); }
+}
+
+/* Clearly separate Ulster's institutional hosting from external funders and wider FMI affiliations. */
+.identity-host-row { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); gap:13px; align-items:stretch; }
+.identity-host-tile { background:#EAF1F7; border-color:#B9CEDF; min-height:106px; }
+.identity-host-note { margin:0; padding:18px 20px; background:#F8FAFC; border:1px solid #D8E3ED; border-radius:9px; color:#354C61; font-size:13px; line-height:1.75; }
+.identity-wider-heading-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:0 0 16px; }
+.identity-wider-heading-grid .identity-tile { min-height:91px; }
+.identity-context-note { color:#4C6378; font-size:12px; line-height:1.75; margin:14px 0 0; }
+@media(max-width:780px){.identity-host-row{grid-template-columns:1fr}}
+@media(max-width:560px){.identity-wider-heading-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="topstrip">THE INAUGURAL FMI WORKSHOP <b>·</b> 25 MAY 2027 <b>·</b> BELFAST, NORTHERN IRELAND</div>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand" aria-label="FMI Workshop 2027 home"><span class="brand-mark">F<span style="font-size:13px">/</span></span><span class="brand-word"><strong>FMI Workshop '27</strong><span>Ulster University · Belfast</span></span></a>
+      <button class="menu-btn" id="menu-toggle" type="button" aria-label="Open navigation" aria-controls="primary-navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Main navigation"><a href="#about">About</a><a href="#themes">Themes</a><a href="#programme">Programme</a><a href="#speakers">Speakers</a><a href="#propose-talk">Propose a talk</a><a href="#organisers">Organisers</a><a href="#registration" class="nav-register">Registration</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <div class="pill"><i></i> 1st Future Medicines Institute Workshop</div>
+          <h1 id="hero-title">Rapid Prototyping <span>in Medical AI.</span></h1>
+          <p class="tagline">From Multi-Sensor Data to Clinical Impact.</p>
+          <p class="lede">Bringing together researchers, clinicians, and industry innovators who are turning medical AI ideas into working prototypes, tested systems, and real-world healthcare solutions.</p>
+          <div class="hero-actions"><a href="#programme" class="btn btn-primary">Explore the programme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a><a href="#registration" class="btn btn-outline">Registration details</a></div>
+        </div>
+        <div class="hero-graphic" aria-label="Illustration of a multi-sensor data stream passing through an AI prototype to a clinical impact pathway">
+          <svg role="img" aria-labelledby="diagram-title" viewBox="0 0 600 565" xmlns="http://www.w3.org/2000/svg">
+            <title id="diagram-title">From sensor signals to AI prototypes and clinical impact</title>
+            <defs><linearGradient id="pane" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354F6A"/><stop offset="1" stop-color="#223243"/></linearGradient><linearGradient id="glowline" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#90AFCD"/><stop offset="1" stop-color="#527DA3"/></linearGradient><filter id="sh"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-opacity=".25"/></filter></defs>
+            <g filter="url(#sh)"><rect x="46" y="75" width="508" height="413" rx="25" fill="url(#pane)" stroke="#99B5D1" stroke-opacity=".48"/><rect x="46" y="75" width="508" height="62" rx="25" fill="#37526D"/><path d="M46 113v25h508v-25" fill="#37526D"/><circle cx="76" cy="106" r="5" fill="#9BB7D3"/><circle cx="94" cy="106" r="5" fill="#B9CDE0"/><circle cx="112" cy="106" r="5" fill="#527DA3"/><text x="138" y="111" fill="#F3F6F9" font-family="sans-serif" font-size="13" font-weight="700" letter-spacing="1.1">MEDICAL AI PROTOTYPE LAB</text><rect x="447" y="94" width="86" height="25" rx="12" fill="#253749"/><circle cx="462" cy="106.5" r="4" fill="#527DA3"/><text x="473" y="111" fill="#C3D4E5" font-family="sans-serif" font-size="10">LIVE</text></g>
+            <rect x="69" y="155" width="216" height="145" rx="15" fill="#1B2936" stroke="#557FA9"/><text x="88" y="181" fill="#B9CDE0" font-family="sans-serif" font-size="12" font-weight="700">01 / MULTI-SENSOR INPUT</text><path d="M87 239H267M87 211H267M87 268H267" stroke="#5982AB" stroke-opacity=".4"/><path d="M89 239h28l13-34 16 62 15-45 16 17 12-7h29l12-30 14 52 13-25h29" fill="none" stroke="#96B3D0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="88" y="289" fill="#A8C0D9" font-family="sans-serif" font-size="10">ECG · Wearables · Biosensors</text>
+            <rect x="313" y="155" width="218" height="145" rx="15" fill="#1B2936" stroke="#557FA9"/><text x="332" y="181" fill="#B9CDE0" font-family="sans-serif" font-size="12" font-weight="700">02 / AI PROTOTYPE</text><g stroke="#7097BF" stroke-width="2"><path d="M366 224L403 200 438 224 480 206M366 224l39 43 33-43 42 37M403 200l2 67M438 224l42 37" opacity=".75"/></g><g fill="#96B3D0"><circle cx="366" cy="224" r="8"/><circle cx="403" cy="200" r="8"/><circle cx="438" cy="224" r="11"/><circle cx="480" cy="206" r="8"/><circle cx="405" cy="267" r="9"/><circle cx="480" cy="261" r="8"/></g><circle cx="438" cy="224" r="18" fill="none" stroke="#D0DDEA" stroke-opacity=".3" stroke-width="3"/><text x="332" y="289" fill="#A8C0D9" font-family="sans-serif" font-size="10">Model · Interface · Validation</text>
+            <path d="M175 303v31h248v-31" fill="none" stroke="url(#glowline)" stroke-width="2.2" stroke-dasharray="6 6"/><circle cx="298" cy="334" r="6" fill="#527DA3"/>
+            <rect x="69" y="357" width="462" height="105" rx="15" fill="#1B2936" stroke="#557FA9"/><text x="88" y="380" fill="#B9CDE0" font-family="sans-serif" font-size="12" font-weight="700">03 / PATHWAY TO CLINICAL IMPACT</text><g font-family="sans-serif" font-size="10" font-weight="700"><rect x="88" y="396" rx="9" width="118" height="46" fill="#3B5874"/><text x="101" y="424" fill="#F3F6F9">TEST &amp; EVALUATE</text><path d="M217 419h25" stroke="#9AB6D2" stroke-width="2"/><path d="m236 414 6 5-6 5" fill="none" stroke="#9AB6D2" stroke-width="2"/><rect x="254" y="396" rx="9" width="116" height="46" fill="#3B5874"/><text x="267" y="424" fill="#F3F6F9">INTEGRATE</text><path d="M381 419h23" stroke="#9AB6D2" stroke-width="2"/><path d="m398 414 6 5-6 5" fill="none" stroke="#9AB6D2" stroke-width="2"/><rect x="413" y="396" rx="9" width="99" height="46" fill="#A5BED8"/><text x="428" y="424" fill="#253749">IMPACT</text></g>
+            <rect x="0" y="35" width="170" height="43" rx="11" fill="#E7EDF3" transform="rotate(-6 0 35)"/><text x="17" y="62" fill="#416181" font-family="sans-serif" font-size="12" font-weight="700" transform="rotate(-6 0 35)">BUILD. TEST. TRANSLATE.</text><g transform="translate(401 457) rotate(7)"><rect x="0" y="0" width="181" height="64" rx="13" fill="#AEC4DB"/><text x="14" y="24" fill="#30475F" font-family="sans-serif" font-size="10" font-weight="700">CLINICAL IMPACT</text><text x="14" y="45" fill="#2D4359" font-family="sans-serif" font-size="15" font-weight="700">BEYOND THE LAB</text></g>
+          </svg>
+        </div>
+      </div>
+      <div class="container hero-foot">
+        <div class="hero-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></svg><div><strong>Tuesday, 25 May 2027</strong><span>One-day, in-person workshop</span></div></div>
+        <div class="hero-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>08:00 – 16:00 BST</strong><span>Keynote, invited talks, lightning talks &amp; panel</span></div></div>
+        <div class="hero-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1116 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><div><strong>Ulster University, Belfast</strong><span>Northern Ireland, United Kingdom</span></div></div>
+      </div>
+    </section>
+    <section class="section" id="about">
+      <div class="container intro-layout">
+        <div class="intro-copy"><span class="eyebrow">The workshop vision</span><h2>Great healthcare AI needs to make it <em style="font-style:normal;color:#315B7F">beyond the paper.</em></h2><p>Medical AI research is advancing quickly, and it is easier than ever to build promising prototypes. But the journey from a published model or proof of concept to something usable in clinical settings remains challenging.</p><p>The inaugural FMI Workshop creates a meeting point for people who have designed, built, evaluated, or deployed practical AI systems for medicine and healthcare. Our emphasis is on experience from the field: what was prototyped, what worked, what did not, and what it takes to translate an idea into impact.</p><a class="link-arrow" href="#themes">Discover the workshop themes <span aria-hidden="true">→</span></a></div>
+        <div class="value-grid"><div class="value-card"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 13 5 5L20 6"/></svg></span><h3>From research to real-world use</h3><p>Conversations grounded in working systems, clinical needs, field evaluations, and translation experience.</p></div><div class="value-card"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="m7 7 4 9M17 7l-4 9M7 6h10"/></svg></span><h3>Cross-disciplinary exchange</h3><p>Computing, engineering, healthcare research, and industry in one room.</p></div><div class="value-card"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span><h3>Practical lessons</h3><p>Multi-sensor pipelines, AI tools, validation, integration, and real-world adoption.</p></div></div>
+      </div>
+    </section>
+    <section class="section themes" id="themes"><div class="container"><div class="section-head"><span class="eyebrow">Research &amp; practice</span><h2>Topics we want to explore.</h2><p>From the first sensor reading to the final clinical workflow, the programme explores the decisions that make medical AI prototypes useful, reliable, and deployable.</p></div><div class="themes-grid">
+      <article class="theme"><span class="theme-num">01 /</span><h3>Rapid medical AI prototyping</h3><p>Fast iteration, proof-of-concept systems, low-code tools, standalone applications, and clinical decision-support interfaces.</p></article>
+      <article class="theme"><span class="theme-num">02 /</span><h3>Multi-sensor data &amp; fusion</h3><p>Combining physiological, environmental, behavioural, and contextual signals into actionable intelligence.</p></article>
+      <article class="theme"><span class="theme-num">03 /</span><h3>Wearables &amp; connected health</h3><p>Smart sensors, remote monitoring, edge AI, real-time pipelines, and continuous patient-centred data.</p></article>
+      <article class="theme"><span class="theme-num">04 /</span><h3>Trustworthy, safe &amp; explainable AI</h3><p>Reliability, transparent evaluation, privacy, bias, governance, and human oversight in medical AI systems.</p></article>
+      <article class="theme"><span class="theme-num">05 /</span><h3>Clinical workflow integration</h3><p>Usability, interoperability, clinician feedback, integration with existing services, and implementation barriers.</p></article>
+      <article class="theme"><span class="theme-num">06 /</span><h3>From prototype to practice</h3><p>Validation in real environments, evidence generation, translational partnerships, regulation, and scale-up.</p></article>
+    </div></div></section>
+    <section class="section special-issue" id="special-issue" aria-labelledby="special-issue-title">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Related research opportunity</span><h2 id="special-issue-title">Further the conversation through research.</h2><p>For researchers working on AI and sensing, a related Special Issue in <em>Sensors</em> offers a separate journal publication opportunity. Workshop participation is not required.</p></div>
+        <div class="special-layout">
+          <article class="special-card">
+            <span class="eyebrow">MDPI Sensors · Special Issue</span>
+            <h3>Artificial Intelligence in Multi-Sensor Systems</h3>
+            <p>The Special Issue welcomes original research and reviews on AI, multimodal sensor fusion, wearable and connected-health technologies, robust and explainable sensing systems, and real-world evaluation. It spans healthcare and other sensor-rich application domains.</p>
+            <dl class="special-roles"><div><dt>Guest Editor</dt><dd>Dr. Sahil Sharma</dd></div><div><dt>Guest Editor</dt><dd>Dr. Nazmul Siddique</dd></div></dl>
+            <a class="btn btn-primary" href="https://www.mdpi.com/journal/sensors/special_issues/VAYF36M731" target="_blank" rel="noopener noreferrer">View the official Special Issue <span aria-hidden="true">↗</span></a>
+          </article>
+          <aside class="special-facts" aria-label="Special Issue information">
+            <div><span class="eyebrow">Published submission deadline</span><p class="due"><time datetime="2027-03-31">31 March 2027</time></p><p id="special-issue-deadline-note">Please check the journal page for current submission status and any deadline changes.</p></div>
+            <div><h4>Relevant areas</h4><div class="tags"><span>Multi-sensor AI</span><span>Sensor fusion</span><span>Wearables</span><span>Connected health</span><span>Trustworthy AI</span><span>Validation &amp; deployment</span></div></div>
+            <p class="disclosure"><strong>Separate opportunities:</strong> This MDPI journal Special Issue is not workshop proceedings. Journal submissions, editorial decisions, and peer review are independent of FMI workshop registration, sponsorship, and speaker selection. Standard journal publication policies and charges apply.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <div class="format-strip"><div class="container format-row"><div class="intro">One day.<br>Many perspectives.</div><div class="format-item"><small>01 /</small><strong>Opening keynote</strong></div><div class="format-item"><small>02 /</small><strong>Academic invited talks</strong></div><div class="format-item"><small>03 /</small><strong>Industry &amp; ECR voices</strong></div><div class="format-item"><small>04 /</small><strong>Translation-focused panel</strong></div></div></div>
+    <section class="section" id="programme"><div class="container"><div class="section-head"><span class="eyebrow">A working agenda</span><h2>Programme at a glance.</h2><p>A full day designed around invited perspectives, short research showcases, and discussion. The programme below is indicative and will be updated as speakers are confirmed.</p></div><div class="schedule-layout"><div class="schedule-list" aria-label="Draft workshop schedule">
+      <div class="schedule-row"><div class="schedule-time"><time datetime="2027-05-25T08:00">08:00–08:20</time></div><div class="schedule-activity"><strong>Welcome &amp; opening remarks</strong><p>Workshop vision, introductions, and the day ahead.</p></div></div>
+      <div class="schedule-row accent"><div class="schedule-time">08:20–09:10</div><div class="schedule-activity"><strong>Opening keynote</strong><p>A leading perspective on translating medical AI research into practice · Speaker TBA</p></div></div>
+      <div class="schedule-row"><div class="schedule-time">09:10–10:40</div><div class="schedule-activity"><strong>Session I · Academic research in action</strong><p>Invited talks from researchers developing and evaluating real medical AI prototypes.</p></div></div>
+      <div class="schedule-row"><div class="schedule-time">10:40–11:00</div><div class="schedule-activity"><strong>Coffee &amp; networking</strong></div></div>
+      <div class="schedule-row"><div class="schedule-time">11:00–12:10</div><div class="schedule-activity"><strong>Lightning talks · PhD &amp; early-career researchers</strong><p>Short, focused showcases of emerging tools, prototypes, and lessons learned.</p></div></div>
+      <div class="schedule-row"><div class="schedule-time">12:10–13:00</div><div class="schedule-activity"><strong>Lunch &amp; networking</strong></div></div>
+      <div class="schedule-row accent"><div class="schedule-time">13:00–14:30</div><div class="schedule-activity"><strong>Session II · Industry perspectives</strong><p>Practical experiences of building, validating, and delivering medical AI products.</p></div></div>
+      <div class="schedule-row"><div class="schedule-time">14:30–14:45</div><div class="schedule-activity"><strong>Afternoon tea, snacks &amp; networking</strong><p>Tea, refreshments, and a chance to connect with speakers and delegates.</p></div></div>
+      <div class="schedule-row accent"><div class="schedule-time">14:45–15:40</div><div class="schedule-activity"><strong>Panel · From Prototype to Practice</strong><p>Researchers, industry innovators, and clinical stakeholders discuss barriers and pathways to impact.</p></div></div>
+      <div class="schedule-row"><div class="schedule-time">15:40–16:00</div><div class="schedule-activity"><strong>Closing reflections &amp; next steps</strong><p>Key takeaways and opportunities for continued collaboration. Official programme ends at 16:00 BST.</p></div></div>
+    </div><aside class="program-note"><span class="eyebrow">A different kind of workshop</span><h3>No proceedings. Just meaningful exchange.</h3><p>This is a presentation-based event with invited contributions, not a conventional paper-submission workshop.</p><ul><li>Previously published work is welcome.</li><li>Real-world implementations and applied lessons are encouraged.</li><li>PhD and early-career researchers will have a lightning-talk opportunity.</li><li>Speaker invitations and timings are being finalised.</li><li>The public programme ends at 16:00; room access is planned until 16:30 for informal discussions and event close-down, subject to room confirmation.</li></ul><a class="link-arrow" href="event.ics">Add the workshop to your calendar <span aria-hidden="true">↗</span></a></aside></div></div></section>
+    <section class="section speakers" id="speakers"><div class="container"><div class="section-head"><span class="eyebrow">Voices from research &amp; industry</span><h2>Invited speakers.</h2><p>We aim to feature people who have moved beyond theoretical demonstrations to build, test, or deploy AI-enabled medical technologies. Speaker details will be announced following confirmation.</p></div><div class="speakers-row"><div class="speaker-slot"><div class="avatar-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 20h10M12 16v4M5 4h14v8a7 7 0 01-14 0z"/></svg></div><p class="label">Opening keynote</p><h3>Speaker to be announced</h3><p>Keynote address on translational medical AI</p></div><div class="speaker-slot"><div class="avatar-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20h18M5 20V6l7-3 7 3v14M9 9h6M9 13h6"/></svg></div><p class="label">Academic session</p><h3>Invitations in progress</h3><p>Researchers from computing, engineering, and health sciences</p></div><div class="speaker-slot"><div class="avatar-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18"/></svg></div><p class="label">Industry session</p><h3>Invitations in progress</h3><p>Teams bringing medical AI technologies into practice</p></div></div>  <div class="speaker-callout"><p><strong>Built or tested a medical AI prototype? We want to hear from you.</strong><br>Researchers, PhD and early-career colleagues, and industry teams can propose a presentation for the relevant session. This is a selective, invitation-led programme; proposals are reviewed by the organising committee.</p><a href="#propose-talk">Propose a talk ↗</a></div></div></section>
+
+    <section class="section proposals" id="propose-talk" aria-labelledby="proposal-title">
+      <div class="container">
+        <div class="proposal-heading"><div><span class="eyebrow">Opportunity to contribute</span><h2 id="proposal-title">Propose a talk.<span class="proposal-sub"> Show what actually works.</span></h2></div><p>We welcome expressions of interest from academics, healthcare researchers, and industry practitioners who have <strong>built, evaluated, piloted, or deployed</strong> medical AI prototypes. Previously published work is welcome. The focus is practical implementation and translational lessons, rather than theory alone.</p></div>
+        <div class="proposal-tracks" aria-label="Presentation streams">
+          <article><span class="track-label">01 / Academic session</span><h3>Research prototypes in action</h3><p>Working systems, data pipelines, sensor-based models, evaluation studies, and lessons from clinical collaboration.</p><a href="#speaker-form" data-select-track="Academic session">Propose an academic talk ↗</a></article>
+          <article><span class="track-label">02 / Industry session</span><h3>From build to deployment</h3><p>Engineering decisions, pilots, validation, integration, and practical barriers to moving medical AI into use.</p><a href="#speaker-form" data-select-track="Industry session">Propose an industry talk ↗</a></article>
+          <article><span class="track-label">03 / Emerging researchers</span><h3>Lightning talks</h3><p>Short showcases from PhD and early-career researchers developing promising, demonstrable prototypes.</p><a href="#speaker-form" data-select-track="PhD / early-career lightning talk">Propose a lightning talk ↗</a></article>
+        </div>
+        <div class="proposal-form-panel" id="speaker-form"><div class="proposal-form-intro"><span class="eyebrow">Speaker expression of interest</span><h3>Tell us about your prototype.</h3><p>Share your project and the evidence that makes it relevant for the workshop. The organising committee, led by the Workshop Chair, will assess expressions of interest and invite selected speakers based on programme fit and available slots.</p><div class="proposal-policy"><strong>Important:</strong> This is not automatic speaker registration, an invitation, or an acceptance. It is not a research-paper submission and does not create a publication.</div><p class="proposal-hint">This GitHub Pages site does not store form entries. Pressing the button prepares an email in your email application; <strong>you must send that email</strong> for your proposal to reach the organisers.</p><a class="proposal-direct-email" href="mailto:s.sharma@ulster.ac.uk?subject=FMI%20Workshop%202027%20%E2%80%93%20Speaker%20Expression%20of%20Interest">Or email your proposal directly ↗</a></div>
+          <form id="speaker-interest-form" aria-label="Speaker expression of interest">
+            <div class="form-two"><div class="form-field"><label for="proposal-name">Full name <span aria-hidden="true">*</span></label><input id="proposal-name" name="name" autocomplete="name" required maxlength="100" placeholder="Your name"></div><div class="form-field"><label for="proposal-email">Email address <span aria-hidden="true">*</span></label><input id="proposal-email" name="email" type="email" autocomplete="email" required maxlength="150" placeholder="you@organisation.org"></div></div>
+            <div class="form-field"><label for="proposal-org">Organisation / affiliation <span aria-hidden="true">*</span></label><input id="proposal-org" name="organisation" autocomplete="organization" required maxlength="160" placeholder="University, hospital, company, or organisation"></div>
+            <div class="form-field"><label for="proposal-track">Presentation stream <span aria-hidden="true">*</span></label><select id="proposal-track" name="track" required><option value="" selected disabled>Choose the most relevant session</option><option value="Academic session">Academic session</option><option value="Industry session">Industry session</option><option value="PhD / early-career lightning talk">PhD / early-career lightning talk</option></select></div>
+            <div class="form-field"><label for="proposal-title-field">Proposed talk title <span aria-hidden="true">*</span></label><input id="proposal-title-field" name="title" required maxlength="180" placeholder="What would your talk be called?"></div>
+            <div class="form-field"><label for="proposal-summary">What have you built, tested, or deployed? <span aria-hidden="true">*</span></label><textarea id="proposal-summary" name="summary" required rows="4" maxlength="1300" placeholder="Describe the prototype, data or sensor sources, what is operational, and the potential clinical use."></textarea></div>
+            <div class="form-field"><label for="proposal-evidence">Evidence of impact or validation <span class="optional">(optional)</span></label><textarea id="proposal-evidence" name="evidence" rows="2" maxlength="600" placeholder="For example: testing, partners, user feedback, clinical pilots, performance or deployment lessons."></textarea></div>
+            <div class="form-field"><label for="proposal-link">Relevant project, demo, or publication link <span class="optional">(optional)</span></label><input id="proposal-link" name="link" type="url" maxlength="300" placeholder="https://..."></div>
+            <button type="submit" class="btn btn-dark proposal-submit">Prepare my proposal email <span aria-hidden="true">↗</span></button><p id="speaker-form-status" class="form-status" role="status" aria-live="polite">The application opens a draft in your email app; no information is sent by this website.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="organisers"><div class="container"><div class="section-head"><span class="eyebrow">The people behind the workshop</span><h2>Organising committee.</h2><p>Coordinated at Ulster University, bringing together expertise across the School of Computing and the School of Engineering.</p></div><div class="team-grid">
+      <article class="team-card lead"><div class="team-top"><div class="initial">SS</div><span class="team-role">Workshop Chair</span></div><h3>Dr. Sahil Sharma</h3><p>Research Fellow · Future Medicines Institute<br>School of Computing, Ulster University</p><div class="team-links"><a href="https://www.ulster.ac.uk/staff/s-sharma" target="_blank" rel="noopener noreferrer">Ulster University profile ↗</a><a href="mailto:s.sharma@ulster.ac.uk">Email the chair ↗</a></div></article>
+      <article class="team-card"><div class="team-top"><div class="initial">CN</div><span class="team-role">Academic Co-Chair</span></div><h3>Prof. Christopher Nugent</h3><p>Head of School of Computing<br>Ulster University</p><a href="https://www.ulster.ac.uk/staff/cd-nugent" target="_blank" rel="noopener noreferrer">University profile ↗</a></article>
+      <article class="team-card"><div class="team-top"><div class="initial">JM</div><span class="team-role">Academic Co-Chair</span></div><h3>Prof. James McLaughlin</h3><p>Professor of Biomedical Engineering<br>School of Engineering, Ulster University</p><a href="https://www.ulster.ac.uk/staff/jad-mclaughlin" target="_blank" rel="noopener noreferrer">University profile ↗</a></article>
+    </div><h3 class="support-header">Workshop operations team <span style="font:500 12px 'DM Sans',sans-serif;color:#52677A">· Appointments to be confirmed</span></h3><div class="support-grid"><div class="support-card"><span>ROLE TO BE ASSIGNED</span><h4>Registration &amp; Finance Coordinator</h4><p>Delegate bookings, registration records, payment reconciliation through approved university systems, and budget reporting.</p></div><div class="support-card"><span>ROLE TO BE ASSIGNED</span><h4>Event Operations &amp; Hospitality Coordinator</h4><p>Speaker travel and accommodation coordination, catering, room logistics, and on-the-day delegate experience.</p></div></div></div></section>
+    <section class="section tickets" id="registration"><div class="container"><div class="section-head"><span class="eyebrow">Attend in person</span><h2>Registration &amp; tickets.</h2><p>Join colleagues across research, clinical innovation, and industry for a day of practical discussion and networking at Ulster University's Belfast campus. Afternoon tea and snacks will be provided.</p></div><div class="pricing-grid">
+      <article class="price-card highlight"><div class="price-type">Students</div><div class="price">£20<span> / person</span></div><p>PhD, postgraduate, and undergraduate students.</p><div class="rule"></div><small>In-person admission · Proposed rate</small></article>
+      <article class="price-card"><div class="price-type">Academics &amp; university staff</div><div class="price">£30<span> / person</span></div><p>Researchers, faculty, and university or healthcare research staff.</p><div class="rule"></div><small>In-person admission · Proposed rate</small></article>
+      <article class="price-card"><div class="price-type">Industry delegates</div><div class="price">£30<span> / person</span></div><p>Industry R&amp;D, medtech professionals, and innovation partners.</p><div class="rule"></div><small>In-person admission · Proposed rate</small></article>
+    </div><div class="pricing-bottom"><p><strong>Registration is not yet open.</strong> Prices are indicative and subject to final confirmation. A secure university-approved booking and payment link will appear here when available. No payments are collected by this website.</p><span class="btn btn-dark" aria-disabled="true" role="status">Registration opening soon</span></div></div></section>
+    <section class="venue" id="venue"><div class="container"><div class="venue-layout"><div class="venue-copy"><span class="eyebrow">Location</span><h2>Meet us in the heart of Belfast.</h2><p>A fully in-person workshop hosted at Ulster University's Belfast campus. The specific room and arrival instructions will be confirmed closer to the event.</p><address class="venue-address">Ulster University, Belfast Campus<br>2–24 York Street<br>Belfast, BT15 1AP<br>United Kingdom</address><div class="hero-actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Ulster+University+Belfast+Campus+2-24+York+Street" target="_blank" rel="noopener noreferrer">View location <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="https://www.ulster.ac.uk/campuses/belfast" target="_blank" rel="noopener noreferrer">Campus information</a></div></div><div class="venue-art" role="img" aria-label="Abstract location illustration for Belfast, Northern Ireland"><div class="orbit one"></div><div class="orbit two"></div><div class="orbit three"></div><div class="venue-center"><strong>BELFAST</strong><span>54.6° N</span></div><div class="map-pin one">ULSTER UNIVERSITY</div><div class="map-pin two">NORTHERN IRELAND</div><div class="map-pin three">IN PERSON · 2027</div></div></div></div></section>
+    <section class="section partners identity-section" id="partners" aria-labelledby="fmi-partners-title">
+      <div class="container">
+        <div class="identity-intro">
+          <div>
+            <span class="eyebrow">Institutional context &amp; workshop partners</span>
+            <h2 id="fmi-partners-title">About the Future Medicines Institute.</h2>
+          </div>
+          <div class="identity-summary">
+            <p>The <strong>Future Medicines Institute (FMI)</strong> is a Northern Ireland research initiative advancing precision medicine through collaboration among universities, industry and healthcare innovators. The wider FMI programme is hosted by <strong>Queen's University Belfast</strong>, with <strong>Ulster University</strong> as an academic partner. <strong>The inaugural FMI Workshop 2027 is organised and hosted by Ulster University at its Belfast campus, with institutional support provided through Ulster University.</strong></p>
+            <a class="link-arrow" href="https://www.futuremedicinesinstitute.com/about" target="_blank" rel="noopener noreferrer">Explore the Future Medicines Institute <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <!-- Organisation names are text links, not representations of official logos.
+             Add approved logo assets only after permission is obtained. -->
+        <div class="identity-panel" aria-label="Workshop institutional support, external funders and wider FMI context">
+          <div class="identity-group identity-group-host">
+            <div class="identity-group-title">
+              <h3>Workshop Host &amp; Institutional Support</h3>
+              <p>The organisation and institutional funding of FMI Workshop 2027</p>
+            </div>
+            <div class="identity-host-row">
+              <a class="identity-tile identity-host-tile" href="https://www.ulster.ac.uk/" target="_blank" rel="noopener noreferrer">
+                <span class="identity-monogram" aria-hidden="true">UU</span>
+                <span><strong>Ulster University</strong><small>Workshop organiser, host institution &amp; institutional funding support</small></span>
+              </a>
+              <p class="identity-host-note">The workshop is organised at <strong>Ulster University Belfast</strong> through its FMI research activities. <strong>Ulster University provides the workshop's institutional support.</strong> External journal funding partners are acknowledged separately below.</p>
+            </div>
+          </div>
+
+          <div class="identity-group identity-group-funding">
+            <div class="identity-group-title">
+              <h3>External Funding Partners</h3>
+              <p>External support for the FMI Workshop 2027</p>
+            </div>
+            <div class="identity-funding-grid">
+              <a class="identity-tile identity-funder" href="https://www.mdpi.com/journal/sensors" target="_blank" rel="noopener noreferrer"><span><strong>MDPI Sensors</strong><small>Journal funding partner</small></span></a>
+              <a class="identity-tile identity-funder" href="https://www.mdpi.com/journal/aisens" target="_blank" rel="noopener noreferrer"><span><strong>MDPI AI Sensors</strong><small>Journal funding partner</small></span></a>
+            </div>
+            <div class="identity-sponsor-note">
+              <span>Additional industry funding partnerships are welcome.</span>
+              <a href="mailto:s.sharma@ulster.ac.uk?subject=FMI%20Workshop%202027%20%E2%80%93%20Sponsorship%20Enquiry">Contact the organising committee ↗</a>
+            </div>
+          </div>
+
+          <div class="identity-group identity-group-minor">
+            <div class="identity-group-title">
+              <h3>Wider FMI Consortium &amp; Ecosystem</h3>
+              <p>Wider FMI relationships, separate from this workshop's funding and organisation</p>
+            </div>
+            <div class="identity-wider-heading-grid">
+              <a class="identity-tile identity-tile-feature" href="https://www.futuremedicinesinstitute.com/" target="_blank" rel="noopener noreferrer">
+                <span class="identity-monogram" aria-hidden="true">FMI</span>
+                <span><strong>Future Medicines Institute</strong><small>Wider precision medicine initiative</small></span>
+              </a>
+              <a class="identity-tile" href="https://www.qub.ac.uk/" target="_blank" rel="noopener noreferrer">
+                <span><strong>Queen's University Belfast</strong><small>Host university of the wider FMI programme</small></span>
+              </a>
+            </div>
+            <div class="identity-name-grid" aria-label="FMI industry and innovation partners">
+              <span>Almac Group</span>
+              <span>Randox Laboratories</span>
+              <span>Fusion Antibodies</span>
+              <span>Sonrai Analytics</span>
+              <span>ProAxsis</span>
+              <span>Diaceutics</span>
+              <span>Exploristics</span>
+              <span>HIRANI</span>
+            </div>
+            <p class="identity-context-note">These are wider FMI programme and ecosystem relationships. Their inclusion does not imply funding, sponsorship or an organising role in the 2027 workshop. Queen's University Belfast is not a workshop funding partner.</p>
+            <a class="identity-source-link" href="https://www.futuremedicinesinstitute.com/partners-2" target="_blank" rel="noopener noreferrer">View the FMI partner directory ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="faq" id="faq"><div class="container faq-grid"><div><span class="eyebrow">Useful to know</span><h2>Frequently asked questions.</h2><p class="sub">Answers to the most common questions as we prepare for the inaugural workshop.</p></div><div class="faq-items"><details><summary>Is this a paper-submission conference?</summary><p>No. This is an invitation-led, presentation-based workshop. We are not inviting proceedings papers or publishing a proceedings volume. Contributions can discuss previously published work or systems already in practice.</p></details><details><summary>Is the MDPI Sensors Special Issue part of the workshop?</summary><p>No. The <a href="#special-issue">related journal Special Issue</a> is a separate publication opportunity. The workshop does not publish proceedings, and speaking at or attending the workshop has no bearing on journal peer review or editorial decisions. The published journal deadline is 31 March 2027, before the workshop date.</p></details><details><summary>Can I apply to speak if I have not been invited?</summary><p>Yes. Use the <a href="#propose-talk">speaker expression-of-interest form</a> for the academic, industry, or PhD / early-career lightning-talk track. We prioritise experience developing, testing, or deploying working medical AI prototypes. The organisers review proposals and invite selected speakers; submitting an expression of interest does not guarantee a place.</p></details><details><summary>Will there be opportunities for PhD researchers?</summary><p>Yes. The draft programme includes a lightning-talk segment for PhD and early-career researchers who have relevant prototypes or applied results. Expressions of interest are welcome through the same speaker form.</p></details><details><summary>What is the finish time?</summary><p>The published programme runs from 08:00 to 16:00 BST. The venue is planned to remain available until approximately 16:30 for informal discussions and event close-down, subject to the room booking.</p></details><details><summary>Can I attend remotely?</summary><p>The current plan is for an in-person event at Ulster University Belfast. A remote attendance option has not been announced.</p></details><details><summary>Where can I register and pay?</summary><p>Registration is not yet open. A link to a university-approved booking platform will be published here when arrangements are finalised. This static website does not collect payments or attendee data.</p></details><details><summary>How can my organisation sponsor the workshop?</summary><p>Industry and other external sponsors are welcome to enquire. Email the workshop chair using the link in the External Funding Partners section.</p></details></div></div></section>
+  </main>
+  <footer><div class="container"><div class="footer-top"><div class="footer-brand"><strong>FMI Workshop '27</strong><p>Rapid Prototyping in Medical AI: From Multi-Sensor Data to Clinical Impact.<br>25 May 2027 · Ulster University Belfast.</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="#about">About</a><a href="#programme">Programme</a><a href="#propose-talk">Propose a talk</a><a href="#organisers">Organisers</a><a href="#registration">Registration</a><a href="#special-issue">MDPI Special Issue</a><a href="#partners">Institutional context &amp; partners</a><a href="mailto:s.sharma@ulster.ac.uk">Contact</a></nav></div><div class="footer-bottom"><span>© 2027 FMI Workshop Organising Committee · Ulster University, Belfast</span><span>Designed for research-to-practice conversations. <a href="#top">Back to top ↑</a></span></div></div></footer>
+  <script>
+    (() => {
+      const menuButton = document.getElementById('menu-toggle');
+      const menu = document.getElementById('primary-navigation');
+      function closeMenu(){ menu.classList.remove('is-open'); menuButton.setAttribute('aria-expanded','false'); menuButton.setAttribute('aria-label','Open navigation'); }
+      menuButton.addEventListener('click',()=>{ const isOpen=menu.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',String(isOpen));menuButton.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation'); });
+      menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+      document.addEventListener('click',e=>{if(!menu.contains(e.target)&&!menuButton.contains(e.target))closeMenu();});
+      if('IntersectionObserver' in window){
+        const targets=[...document.querySelectorAll('main section[id]')];
+        const links=[...menu.querySelectorAll('a[href^="#"]')];
+        const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));}}},{rootMargin:'-20% 0px -65% 0px'});
+        targets.forEach(section=>observer.observe(section));
+      }
+    })();
+  </script>
+
+  <script>
+    // On a static GitHub Pages site, speaker proposals are handed off to the visitor's own email app.
+    // No submission, acceptance or data storage is implied.
+    (() => {
+      const form = document.getElementById('speaker-interest-form');
+      const track = document.getElementById('proposal-track');
+      const status = document.getElementById('speaker-form-status');
+      document.querySelectorAll('[data-select-track]').forEach(link => {
+        link.addEventListener('click', () => { track.value = link.getAttribute('data-select-track'); });
+      });
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const data = new FormData(form);
+        const value = name => String(data.get(name) || '').trim();
+        const subject = `FMI Workshop 2027 — ${value('track')} — speaker expression of interest`;
+        const body = [
+          'Speaker expression of interest — FMI Workshop 2027',
+          '',
+          `Name: ${value('name')}`,
+          `Email: ${value('email')}`,
+          `Affiliation: ${value('organisation')}`,
+          `Session: ${value('track')}`,
+          `Proposed title: ${value('title')}`,
+          '',
+          'What I have built, tested or deployed:',
+          value('summary'),
+          '',
+          'Evidence of impact or validation:',
+          value('evidence') || 'Not specified',
+          '',
+          `Project / demo / publication: ${value('link') || 'Not provided'}`,
+          '',
+          'I understand that this is an expression of interest and that the organising committee selects and invites speakers.'
+        ].join('\n');
+        status.textContent = 'Your email application should now open with a prepared draft. Please send that email to submit your proposal. If no email app opens, use the direct email link alongside this form.';
+        window.location.href = 'mailto:s.sharma@ulster.ac.uk?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
+  <script>
+    // Avoid treating a March 2027 journal submission deadline as an active May workshop call.
+    (() => {
+      const note = document.getElementById('special-issue-deadline-note');
+      if (note && Date.now() >= Date.parse('2027-04-02T00:00:00Z')) {
+        note.textContent = 'The originally published submission deadline has passed. Please consult MDPI for the current status or any extension.';
+      }
+    })();
+  </script>
+</body>
+</html>
